@@ -12,9 +12,8 @@ export const uploadFile = async (assetType: AssetType, file: File) => {
       `/api/s3/rgb/upload-url?objectKey=${file.name}`
     );
     const { presignedUrl } = await response.json();
-    console.log(presignedUrl);
     try {
-      const res = await fetch(presignedUrl, {
+      await fetch(presignedUrl, {
         method: "PUT",
         body: file,
         headers: {
