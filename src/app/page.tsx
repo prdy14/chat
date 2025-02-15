@@ -1,7 +1,9 @@
+import FileUploder from "src/app/components/FileUploder";
+
 export default function Home() {
   return (
-    <div>
-      <h1>hello world</h1>
+    <div className="grid w-full max-w-sm items-center gap-1.5">
+      <FileUploder assetType={"RGB_SPLITTING"} />
     </div>
   );
 }
